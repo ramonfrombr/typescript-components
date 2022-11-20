@@ -97,6 +97,35 @@ function TextWithNumber({
 }
 
 
+// List
+function List<ListItem>({
+  items,
+  render,
+}: {
+  items: ListItem[],
+  render: (item: ListItem) => ReactNode
+}) {
+  return (
+    <ul>
+      {items.map((item, index) => (
+        <li key={index}>
+          {render(item)}
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+class MyHeading extends React.Component<{
+  title: ReactNode,
+}, {}> {
+  render() {
+    return (
+      <h1>{this.props.title}</h1>
+    )
+  }
+}
+
 function App() {
   return (
     <div>
@@ -125,6 +154,14 @@ function App() {
           <div>Today's number is {num ? num : '0'}</div>
         )}
       </TextWithNumber>
+
+
+      <List
+        items={['Jack', 'John', 'james']}
+        render={(item: string) => <div>{item.toLocaleLowerCase()}</div>}
+      ></List>
+
+      <MyHeading title="There you go"></MyHeading>
     </div>
   );
 }
