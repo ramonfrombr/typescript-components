@@ -8,10 +8,22 @@ import {
 import { ContainerWithDefaultProps } from "./components/DefaultPropsComponent";
 import { TextWithNumber } from "./components/FunctionalPropsComponents";
 import ListComponent from "./components/List";
+import { Wrapper } from "./styles/Wrapper";
 
 function App() {
   return (
     <div>
+      {/* 
+      <Wrapper buttonNumber={6}>
+        <h1>This is a heading</h1>
+        <button>This is a button</button>
+      </Wrapper>
+
+      <Wrapper buttonNumber={1}>
+        <h1>This is another heading</h1>
+        <button>This is a button</button>
+        </Wrapper>*/}
+      {/* 
       <Heading title="Hello there"></Heading>
 
       <HeadingWithContent>Hi!</HeadingWithContent>
@@ -48,6 +60,7 @@ function App() {
         items={["Jack", "John", "james"]}
         render={(item: string) => <div>{item.toLocaleLowerCase()}</div>}
       ></ListComponent>
+      */}
     </div>
   );
 }
